@@ -2,6 +2,6 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "",
-    // base: "/astro",
+    site: "https://intramu.github.io",
+    base: "/astro",
 });
