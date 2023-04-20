@@ -2,7 +2,7 @@
 export interface Props {
     title: string;
 }
-import profile from "../../public/profile.svg";
+import profile from "/profile.svg";
 import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
@@ -34,7 +34,7 @@ const { title } = Astro.props;
                 <a data-page="challenges">Challenges</a>
                 <a data-page="issues">Issues</a>
             </nav>
-            <a style="flex: 1; text-align: center;" href="/about">
+            <a style="flex: 1; text-align: center;" href={`${import.meta.env.BASE_URL}about`}>
                 <img src={profile} />
             </a>
         </header>
@@ -47,7 +47,7 @@ const { title } = Astro.props;
         var dataAttribute = tag!.attributes.getNamedItem("data-page").value;
         var element = document.getElementById(dataAttribute);
         if (!element) {
-            window.location.assign("/");
+            window.location.assign(`${import.meta.env.BASE_URL}`);
             return;
         }
         window.scrollTo({ top: element.offsetTop - 109, behavior: "smooth" });

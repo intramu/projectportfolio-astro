@@ -1,16 +1,13 @@
 ---
 const { icon, header } = Astro.props;
-import profile from "../../public/profile.svg";
-import arrow from "../../../public/arrow.svg";
+import arrow from "/arrow.svg";
 ---
 
 <div class="header">
     <h1 style="display: inline-flex; align-items: center; font-weight: bold;">
         <img id="left" class="header-brackets" src={arrow} />
-        <!-- <span style="margin-right: 20px;" class="header-brackets">&lt;</span> -->
         <span>{header}</span>
         <img id="right" class="header-brackets" src={arrow} />
-        <!-- <span style="margin-left: 20px;" class="header-brackets">&gt;</span> -->
     </h1>
     <img class="header-icons" src={icon} alt="Info Icon" />
 </div>
@@ -25,7 +22,6 @@ import arrow from "../../../public/arrow.svg";
     .header-brackets {
         color: #386cd4;
         font-size: 50px;
-        /* padding-bottom: 10px; */
     }
     #left {
         padding: 0px 20px 20px 0px;

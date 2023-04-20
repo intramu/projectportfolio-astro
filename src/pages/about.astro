@@ -1,10 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import headshot from "../../public/headshot.png";
-import info from "../../public/info.svg";
-import logo from "../../public/logo.svg";
-import github from "../../public/github.svg";
-import linkedin from "../../public/linkedin.svg";
+import headshot from "/headshot.png";
+import logo from "/logo.svg";
+import github from "/github.svg";
+import linkedin from "/linkedin.svg";
 ---
 
 <Layout title="About Me">
@@ -12,7 +11,7 @@ import linkedin from "../../public/linkedin.svg";
         <img id="background-crest" src={logo} alt="Background Crest" />
         <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
             <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-end;">
-                <a href="/" style="margin-right: 400px; margin-top: -20px; font-size: 40px;">Back</a
+                <a href={`${import.meta.env.BASE_URL}`} style="margin-right: 400px; margin-top: -20px; font-size: 40px;">Back</a
                 >
                 <img
                     style="height: 400px; width: 400px; border-radius: 50%;"
