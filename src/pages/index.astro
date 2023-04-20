@@ -1,0 +1,145 @@
+---
+import Layout from "../layouts/Layout.astro";
+import logo from "../../public/logo.svg";
+import Requirements from "../components/sections/Requirements.astro";
+import NewsTicker from "../components/NewsTicker.astro";
+import Technologies from "../components/sections/Technologies.astro";
+import Introduction from "../components/sections/Introduction.astro";
+import Diagrams from "../components/sections/Diagrams.astro";
+import Challenges from "../components/sections/Challenges.astro";
+import Issues from "../components/sections/Issues.astro";
+---
+
+<Layout title="Welcome to Intramu">
+    <main>
+        <img id="background-crest" src={logo} alt="Background Crest" />
+        <section class="section" id="landing">
+            <img id="logo" src={logo} alt="Intramu Logo" />
+            <NewsTicker />
+        </section>
+        <Introduction />
+        <Requirements />
+        <Technologies />
+        <Diagrams />
+        <Challenges />
+        <Issues />
+    </main>
+</Layout>
+
+<script>
+    let autoscrollToggle = false;
+
+    document.getElementById("autoscroll")!.addEventListener("click", () => {
+        console.log(autoscrollToggle);
+        autoscrollToggle = !autoscrollToggle;
+        pageScroll();
+    });
+
+    var htmlElement = document.documentElement;
+    var bodyElement = document.body;
+
+    var height = Math.max(
+        //  <---------------------------- entire document height
+        htmlElement.clientHeight,
+        htmlElement.scrollHeight,
+        htmlElement.offsetHeight,
+        bodyElement.scrollHeight,
+        bodyElement.offsetHeight
+    );
+
+    function pageScroll() {
+        var scrollInterval = setInterval(function () {
+            document.documentElement.scrollTop += 5;
+            // console.log(document.documentElement.clientHeight);
+            // console.log(height);
+            // console.log(document.documentElement.scrollTop);
+
+            // console.log("previous", previousScrollHeight);
+            // console.log("current", document.documentElement.scrollTop);
+            // // t++;
+            // console.log(height);
+
+            if (!autoscrollToggle) {
+                clearInterval(scrollInterval);
+                return;
+            }
+            if (document.documentElement.scrollTop === height - htmlElement.clientHeight) {
+                pageScrollToTop();
+                clearInterval(scrollInterval);
+                return;
+            }
+            // previousScrollHeight = document.documentElement.scrollTop;
+        }, 10);
+    }
+
+    function pageScrollToTop() {
+        window.scroll({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+            pageScroll();
+            return;
+        }, 2000);
+    }
+</script>
+
+<style>
+    main {
+        color: white;
+        margin-top: 50px;
+        width: 1400px;
+        margin: auto;
+    }
+    #landing {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 40px;
+        min-height: 100vh;
+        margin-bottom: 0;
+    }
+    #logo {
+        height: 350px;
+        transform: scale(1);
+        animation: pulse 2s infinite;
+        /* animation-delay: 0s;
+        animation-name: spin;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; */
+        /* animation: spin 200ms infinite; */
+        /* transform: rotateY(10deg); */
+    }
+    /* @keyframes spin {
+        0% {
+            transform: rotateY(0deg);
+        }
+        40% {
+            transform: rotateY(40deg);
+        }
+        70% {
+            transform: rotateY(180deg);
+        }
+        100% {
+            transform: rotateY(0deg);
+        }
+    } */
+    @keyframes pulse {
+        0% {
+            transform: scale(0.98);
+        }
+        70% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0.98);
+        }
+    }
+    #background-crest {
+        height: 1600px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1.5%;
+        z-index: -5;
+    }
+</style>

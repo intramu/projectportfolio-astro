@@ -1,0 +1,44 @@
+---
+import TopHeader from "../headers/TopHeader.astro";
+import lock from "../../../public/lock.svg";
+import SubHeader from "../headers/SubHeader.astro";
+---
+
+<section id="requirements">
+    <TopHeader icon={lock} header="Requirements" />
+    <div style="display: flex; flex-direction: row;" class="content-container">
+        <div>
+            <SubHeader text="// functional" />
+            <div class="content-full">
+                <ul class="content-list">
+                    <li>Login & Registration</li>
+                    <li>User Page Space</li>
+                    <li>Team Functionality</li>
+                    <li>Invites & Requests</li>
+                    <li>Managment Levels in Team</li>
+                    <li>Game Schedule</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <SubHeader text="// non-functional" />
+            <div class="content-full">
+                <ul class="content-list">
+                    <li>Logging on back-end server</li>
+                    <li>Custom logging levels</li>
+                    <li>Logs to console and file</li>
+                    <li>Database backups</li>
+                    <li>Frequently backed up</li>
+                    <li>Periodic backups are maintaned</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .content-container > div {
+        flex: 1;
+    }
+</style>

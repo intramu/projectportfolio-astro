@@ -1,0 +1,64 @@
+---
+import TopHeader from "../headers/TopHeader.astro";
+import trophy from "../../../public/trophy.svg";
+import SubHeader from "../headers/SubHeader.astro";
+---
+
+<section id="issues">
+    <TopHeader icon={trophy} header="Issues" />
+
+    <div class="content-container">
+        <SubHeader text="<!-- Front-end -->" />
+        <div class="content-full">
+            <p class="point">
+                <b>- Random State Issues with MobX</b>
+                <p hidden>
+                    Random state issues where object variables are undefined. Prevents clean state
+                    organization and prevents functions from firing
+                </p>
+            </p>
+            <p class="point">
+                <b>- Lack of Messages and Loading Icons</b>
+                <p hidden>
+                    There are no loading icons or any error and success messages. It can make the
+                    application feel sluggish and unresponsive
+                </p>
+            </p>
+            <p class="point">
+                <b>- Unable to Logout</b><p hidden>
+                    Weird bug that I believe is on Auth0's end. Page just refreshes and user stays
+                    logged in
+                </p>
+            </p>
+            <p class="point">
+                <b>- Poor Onboarding Experience</b>
+                <p hidden>
+                    Logins and Signups go through a pre-made Auth0 page which makes the experience
+                    feel unfamiliar
+                </p>
+            </p>
+            <p class="point">
+                <b>- No Formal Design for Administration Portal</b>
+            </p>
+            <p class="point">
+                <b>- Unfinished Pages Around Application</b>
+            </p>
+            <p class="point">
+                <b>- No Tournament Functionality</b>
+            </p>
+            <SubHeader text="<!-- Back-end -->" />
+            <p class="point">
+                <b>- Disorganized</b>
+            </p>
+            <p class="point">
+                <b>- Validation Not Fully Implemented On All Endpoints</b>
+            </p>
+            <p class="point">
+                <b>- Documentation Lacks in Some Areas</b>
+            </p>
+            <p class="point">
+                <b>- No Tournament Functionality</b>
+            </p>
+        </div>
+    </div>
+</section>

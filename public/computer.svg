@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.878" height="20.585" viewBox="0 0 30.878 20.585">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #376ed6;
+      }
+    </style>
+  </defs>
+  <path id="Icon_material-computer" data-name="Icon material-computer" class="cls-1" d="M25.732,24.012a2.57,2.57,0,0,0,2.56-2.573L28.3,8.573A2.581,2.581,0,0,0,25.732,6H5.146A2.581,2.581,0,0,0,2.573,8.573V21.439a2.581,2.581,0,0,0,2.573,2.573H0v2.573H30.878V24.012ZM5.146,8.573H25.732V21.439H5.146Z" transform="translate(0 -6)"/>
+</svg>

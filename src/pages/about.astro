@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import headshot from "../../public/headshot.png";
+import info from "../../public/info.svg";
+import logo from "../../public/logo.svg";
+---
+
+<Layout title="About Me">
+    <main>
+        <img id="background-crest" src={logo} alt="Background Crest" />
+        <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-end;">
+                <a href="/" style="margin-right: 400px; margin-top: -20px; font-size: 40px;">Back</a
+                >
+                <img
+                    style="height: 400px; width: 400px; border-radius: 50%;"
+                    src={headshot}
+                    alt="Profile Headshot"
+                />
+            </div>
+            <div style="flex: 1;">
+                <div style="margin-left: 40px; display: flex; flex-direction: column;" id="content">
+                    <h1>Noah Roerig</h1>
+                    <div style="margin-bottom: 20px;">
+                        <a href="https://github.com/noahr1936">
+                            <img class="icon" src={info} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/noah-roerig-0605bb193/">
+                            <img class="icon" src={info} />
+                        </a>
+                    </div>
+                    <span class="textItem">
+                        Hi, I am a Software Developer, currently studying at Grand Canyon
+                        University.</span
+                    >
+                    <span class="textItem"
+                        >I am passionate about creating projects and learning new technologies.</span
+                    >
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+    main {
+        width: 1400px;
+        margin: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .textItem {
+        width: 80%;
+        font-size: 30px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    #content > span {
+        margin: 5px 0px;
+    }
+    .icon {
+        height: 50px;
+        margin-right: 20px;
+        transition: 400ms;
+    }
+    .icon:hover {
+        transform: scale(1.1);
+    }
+    #background-crest {
+        height: 1600px;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-50%, -50%) rotate(20deg);
+        opacity: 1.5%;
+        z-index: -5;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

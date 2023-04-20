@@ -1,0 +1,83 @@
+<!-- Created by "Alberto Fernandez Martinez"
+Resource URL: https://codepen.io/bertofern/pen/xxEpQGM -->
+<div class="ticker-container">
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="item-collection-1">
+                <span class="item"><span class="mark">&gt;</span>Cloud Hosted by AWS</span>
+                <span class="item"><span class="mark">&gt;</span>Sports Management System</span>
+                <span class="item"><span class="mark">&gt;</span>Performance Designed</span>
+                <span class="item"><span class="mark">&gt;</span>Modern Frameworks</span>
+            </span>
+            <span class="item-collection-2">
+                <span class="item"><span class="mark">&gt;</span>Contemporary Design</span>
+                <span class="item"><span class="mark">&gt;</span>Schedule Tracking</span>
+                <span class="item"><span class="mark">&gt;</span>Designed for Users</span>
+                <span class="item"><span class="mark">&gt;</span>Industry Standard Security</span>
+                <span class="item"><span class="mark">&gt;</span>Built by Students</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<style>
+    .ticker-container {
+        width: 100%;
+        border-radius: 16px;
+        padding: 10px;
+        background-color: #000000;
+    }
+    .ticker-wrap {
+        width: 95%;
+        height: 40px;
+        margin: 0 auto;
+        overflow: hidden;
+        white-space: nowrap;
+        /* height: 3.5rem; */
+        background-color: #000000;
+    }
+    .ticker {
+        display: inline-block;
+        margin-top: 5px;
+        animation: marquee 60s linear infinite;
+    }
+    .item-collection-1 {
+        position: relative;
+        left: 0%;
+        animation: swap 60s linear infinite;
+    }
+
+    .mark {
+        color: white;
+        margin-right: 8px;
+    }
+    .item {
+        display: inline-block;
+        padding: 0 1rem;
+        font-size: 20px;
+        color: #386cd4;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+
+    /* Transition */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes swap {
+        0%,
+        50% {
+            left: 0%;
+        }
+        50.01%,
+        100% {
+            left: 100%;
+        }
+    }
+</style>

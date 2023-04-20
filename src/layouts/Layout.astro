@@ -1,0 +1,144 @@
+---
+export interface Props {
+    title: string;
+}
+import info from "../../public/info.svg";
+import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <header>
+            <div style="flex: 1; text-align: center;">
+                <button
+                    id="autoscroll"
+                    style="background-color: transparent; border: none; color: grey; cursor: pointer;"
+                    >Autoscroll</button
+                >
+            </div>
+            <nav>
+                <a data-page="introduction">Introduction</a>
+                <a data-page="requirements">Requirements</a>
+                <a data-page="technologies">Technologies</a>
+                <a data-page="diagrams">Diagrams</a>
+                <a data-page="challenges">Challenges</a>
+                <a data-page="issues">Issues</a>
+            </nav>
+            <a style="flex: 1; text-align: center;" href="/about">
+                <img src={info} />
+            </a>
+        </header>
+        <slot />
+    </body>
+    <Footer />
+</html>
+<script>
+    function scrollElement(tag: any) {
+        var dataAttribute = tag!.attributes.getNamedItem("data-page").value;
+        var element = document.getElementById(dataAttribute);
+        if (!element) {
+            window.location.assign("/");
+            return;
+        }
+        window.scrollTo({ top: element.offsetTop - 109, behavior: "smooth" });
+    }
+
+    var list = document.querySelectorAll("a");
+    list.forEach((element) => {
+        element.addEventListener("click", () => scrollElement(element));
+    });
+</script>
+<style is:global>
+    /* :root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	} */
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: arial, sans-serif;
+        scroll-behavior: smooth;
+    }
+    html {
+        background-color: #1e1e1e;
+        min-height: 100%;
+    }
+    body {
+        overflow-x: hidden;
+        height: 100vh;
+    }
+    .content-container {
+        margin-left: 20px;
+        margin-bottom: 100px;
+    }
+    header {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        top: 0;
+        z-index: 1000;
+        background-color: #1e1e1e;
+    }
+    nav {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: grey;
+        padding: 20px;
+        flex: 3;
+    }
+    .point {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    section {
+        min-height: 1000px;
+        position: relative;
+        margin-bottom: 300px;
+    }
+    .content-full {
+        border-left: 1px solid grey;
+        margin-bottom: 40px;
+        padding-left: 20px;
+        font-size: 25px;
+        width: 80%;
+    }
+    .container-two-column {
+        display: flex;
+        flex-direction: row;
+    }
+    .container-two-column > * {
+        flex: 1;
+    }
+    .content-list {
+        /* border-left: 1px solid grey; */
+        padding-left: 50px;
+        font-size: 20px;
+    }
+    .content-list > li {
+        margin: 10px 0px;
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 90px;
+        margin: 0;
+    }
+</style>

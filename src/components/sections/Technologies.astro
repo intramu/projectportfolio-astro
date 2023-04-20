@@ -1,0 +1,155 @@
+---
+import computer from "../../../public/computer.svg";
+import nlayer from "../../../public/nLayerDiagram.drawio.svg";
+import SubHeader from "../headers/SubHeader.astro";
+import TopHeader from "../headers/TopHeader.astro";
+---
+
+<section id="technologies">
+    <TopHeader icon={computer} header="Technologies" />
+
+    <div class="content-container">
+        <SubHeader text="` why these?" />
+        <div class="content-full">
+            <p class="point">- Business cases will decide the technology stack</p>
+            <p class="point">- Intramu has the freedom to be built with any technology of choice</p>
+            <p class="point">- I chose to use modern frameworks with great communities</p>
+            <p class="point" hidden>
+                When building a new application one must carefully consider the business cases when
+                choosing the technology stack. Luckily, Intramu had the freedom to be built with any
+                technology of choice. Because of this, the developer chose to use new and up-to-date
+                technologies to keep the application modern.
+            </p>
+        </div>
+    </div>
+    <div class="content-container">
+        <SubHeader text="` choices" />
+        <div class="content-full">
+            <p class="point">
+                - Intramu was built with React.js for the front-end with MobX managing its state
+            </p>
+            <p class="point">
+                - The front-end communicates with a backed-end server running on Express.js &
+                Node.js
+            </p>
+            <p class="point">
+                - The back-end server queries a PostgreSQL database modifying and adding new data
+            </p>
+            <p class="point">- Lastly, it's all written in TypeScript for type safety</p>
+        </div>
+
+        <div class="container-tech">
+            <img src="./reactLogo.png" alt="React Logo" />
+            <img src="./reactLogo.png" alt="React Logo" />
+            <img src="./reactLogo.png" alt="React Logo" />
+            <img src="./reactLogo.png" alt="React Logo" />
+            <img src="./reactLogo.png" alt="React Logo" />
+        </div>
+    </div>
+    <div></div>
+
+    <div class="content-container">
+        <SubHeader text="` new technologies" />
+        <div class="content-full">
+            <p class="point">- Required the learning of lots of TypeScript</p>
+            <p class="point">
+                - Previous experience with these technologies, but it was <b>weak</b>
+            </p>
+            <p class="point">- Never made a project of this level</p>
+            <p class="point">
+                - Learned to use MobX, a state management system and Emotion CSS, a styling
+                framework.
+            </p>
+            <p class="point" hidden>
+                Creating this project required the learning of a lot of JavaScript. I had previosuly
+                worked with React and Express at a basic level, but it was never anything this big.
+            </p>
+            <p class="point" hidden>
+                I had to mature in my skill level with these technologies.<br />
+                I also learned to use MobX, a state management system and Emotion CSS, a styling framework.
+            </p>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <SubHeader text="` best practices" />
+        <div style="display: flex; flex-direction: row;">
+            <div
+                style="display: flex; justify-content: center; flex-direction: column;"
+                class="content-full"
+            >
+                <p class="point">
+                    <b>N-Layer</b> - Built with N-layer architecture to separate logical layers<br
+                    />
+                    <span>- Input validation is performed in the controller layer</span><br />
+                    <span>- Then passed to the business layer to perform logic.</span>
+                </p>
+                <p class="point">
+                    <b>Comments</b> - All code is commented with clear and concise comments<br />
+                    <span>
+                        - Assists myself and other developers in understanding segments of code</span
+                    >
+                </p>
+                <p class="point">
+                    <b>Prettier</b> - Formats the entire codebase so it's consistent and easy to read.<br
+                    />
+                    <span>
+                        - Formatting and indentation can pose a huge problem when multiple
+                        developers are coding.</span
+                    >
+                </p>
+                <p class="point">
+                    <b>Reusability -</b>Intramu code is organized into reusable modules and
+                    components<br />
+                    <span> - Prevents code duplication and promotes reusability of code.</span>
+                </p>
+
+                <!-- <p class="point">
+                    <b>N-Layer -</b>Intramu was built using N-layer architecture to separate the
+                    various logical layers into tiers. Input validation is performed in the
+                    controller layer where it's then passed to the business layer to perform logic.
+                </p>
+                <p class="point">
+                    <b>Comments -</b>All code is commented with clear and concise comments to assist
+                    myself and other developers in understanding segments of code.
+                </p>
+                <p class="point">
+                    <b>Prettier -</b>Formatting and indentation can pose a huge problem when
+                    multiple developers are coding. Each may prefer a certain format. Prettier
+                    formats the entire codebase so it's consistent and easy to read.
+                </p>
+                <p class="point">
+                    <b>Reusability -</b>Intramu code is organized into reusable modules and
+                    components and the front and back-end of the application. The prevents code
+                    duplication and promotes reusability of code.
+                </p> -->
+            </div>
+            <div style="text-align: center;">
+                <img src={nlayer} style="height: 800px;" alt="N-layer Architecture" />
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .container-tech {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        border-radius: 16px;
+        margin: 100px 0;
+        padding: 15px;
+        height: 100px;
+        justify-content: space-around;
+    }
+    .point span {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+    /* .content-container {
+        display: flex;
+        flex-direction: row;
+    } */
+    /* .content-container > div {
+        flex: 1;
+    } */
+</style>

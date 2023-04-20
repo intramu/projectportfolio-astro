@@ -1,0 +1,57 @@
+---
+import TopHeader from "../headers/TopHeader.astro";
+import SubHeader from "../headers/SubHeader.astro";
+import logical from "../../../public/LogicalSolutionDiagramDark.drawio.svg";
+import physical from "../../../public/PhysicalSolutionDiagramDark.drawio.svg";
+import erDiagram from "../../../public/ERDiagramActive.drawio.svg";
+import diagrams from "../../../public/diagrams.svg";
+import lowLevelWireframe from "../../../public/lowLevelWireframe.png";
+import highLevelWireframe from "../../../public/highLevelWireframe.png";
+---
+
+<section id="diagrams">
+    <TopHeader icon={diagrams} header="Diagrams" />
+
+    <div class="content-container">
+        <SubHeader class="subheader" text="# logical solution diagram" />
+        <img src={logical} id="logical" alt="Logical Solution Diagram" />
+    </div>
+
+    <div class="content-container">
+        <SubHeader text="# physical solution diagram" />
+        <img src={physical} id="physical" alt="Physical Solution Diagram" />
+    </div>
+    <div class="content-container">
+        <SubHeader text="# er diagram" />
+        <img src={erDiagram} id="erDiagram" alt="ER Diagram" />
+    </div>
+    <div class="content-container">
+        <SubHeader text="# low level wireframe" />
+        <img src={lowLevelWireframe} id="lowLevelWireframe" alt="Low Level Wireframe" />
+    </div>
+    <div class="content-container">
+        <SubHeader text="# high level wireframe" />
+        <img src={highLevelWireframe} id="highLevelWireframe" alt="High Level Wireframe" />
+    </div>
+</section>
+
+<style>
+    #logical {
+        height: 500px;
+    }
+    #physical {
+        height: 600px;
+    }
+    #erDiagram {
+        height: 900px;
+    }
+    #lowLevelWireframe {
+        height: 700px;
+    }
+    #highLevelWireframe {
+        height: 700px;
+    }
+    img {
+        margin-bottom: 120px;
+    }
+</style>
