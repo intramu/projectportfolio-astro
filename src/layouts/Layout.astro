@@ -2,7 +2,7 @@
 export interface Props {
     title: string;
 }
-import info from "../../public/info.svg";
+import profile from "../../public/profile.svg";
 import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
@@ -35,7 +35,7 @@ const { title } = Astro.props;
                 <a data-page="issues">Issues</a>
             </nav>
             <a style="flex: 1; text-align: center;" href="/about">
-                <img src={info} />
+                <img src={profile} />
             </a>
         </header>
         <slot />
@@ -63,10 +63,13 @@ const { title } = Astro.props;
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	} */
+
     * {
         padding: 0;
         margin: 0;
-        font-family: arial, sans-serif;
+        /* font-family: arial, sans-serif; */
+        font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica,
+            Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         scroll-behavior: smooth;
     }
     html {
@@ -112,7 +115,7 @@ const { title } = Astro.props;
     section {
         min-height: 1000px;
         position: relative;
-        margin-bottom: 300px;
+        margin-bottom: 200px;
     }
     .content-full {
         border-left: 1px solid grey;

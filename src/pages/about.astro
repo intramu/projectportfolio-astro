@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import headshot from "../../public/headshot.png";
 import info from "../../public/info.svg";
 import logo from "../../public/logo.svg";
+import github from "../../public/github.svg";
+import linkedin from "../../public/linkedin.svg";
 ---
 
 <Layout title="About Me">
@@ -23,10 +25,10 @@ import logo from "../../public/logo.svg";
                     <h1>Noah Roerig</h1>
                     <div style="margin-bottom: 20px;">
                         <a href="https://github.com/noahr1936">
-                            <img class="icon" src={info} />
+                            <img class="icon" src={github} />
                         </a>
                         <a href="https://www.linkedin.com/in/noah-roerig-0605bb193/">
-                            <img class="icon" src={info} />
+                            <img class="icon" src={linkedin} />
                         </a>
                     </div>
                     <span class="textItem">
@@ -67,7 +69,7 @@ import logo from "../../public/logo.svg";
         margin: 5px 0px;
     }
     .icon {
-        height: 50px;
+        height: 40px;
         margin-right: 20px;
         transition: 400ms;
     }
