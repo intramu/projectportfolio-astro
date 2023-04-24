@@ -3,16 +3,35 @@ import github from "/github.svg";
 ---
 
 <footer>
-    <a href="https://github.com/intramu">
-        <img src={github} />
+    <span style="flex: 2; text-align: right;">Check out Intramu -&gt;</span>
+    <a
+        style="flex: 1; text-align: center;"
+        href="https://github.com/intramu"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <img src={github} alt="Github Icon" />
     </a>
-    <a href="#landing">Back to Top</a>
+    <a id="top" style="flex: 2; text-align: left;">Back to Top ^</a>
 </footer>
+<script>
+    const top = document.getElementById("top");
+
+    top!.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    if (window.location.pathname.includes("about")) {
+        top!.innerHTML = "";
+    }
+</script>
 
 <style>
     footer {
         width: 1400px;
         height: 100px;
+        padding: 5px;
+        flex: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,8 +41,6 @@ import github from "/github.svg";
         color: grey;
     }
     a {
-        text-decoration: none;
         color: inherit;
-        margin: 10px;
     }
 </style>

@@ -11,54 +11,47 @@ import trophy from "/trophy.svg";
         <SubHeader text="<!-- Front-end -->" />
         <div class="content-full">
             <p class="point">
-                <b>- Random State Issues with MobX</b>
-                <p hidden>
-                    Random state issues where object variables are undefined. Prevents clean state
-                    organization and prevents functions from firing
-                </p>
+                <b>Random State Issues with MobX</b>
+                - Random state issues where object variables are undefined. Prevents clean state organization
+                and prevents some functions from firing.
             </p>
             <p class="point">
-                <b>- Lack of Messages and Loading Icons</b>
-                <p hidden>
-                    There are no loading icons or any error and success messages. It can make the
-                    application feel sluggish and unresponsive
-                </p>
+                <b>Lack of Messages and Loading Icons</b>
+                - There are limited loading icons or error and success messages. It can make the application
+                feel sluggish and unresponsive.
             </p>
             <p class="point">
-                <b>- Unable to Logout</b><p hidden>
-                    Weird bug that I believe is on Auth0's end. Page just refreshes and user stays
-                    logged in
-                </p>
+                <b>Poor Onboarding Experience</b>
+                - Logins and Signups go through a pre-made Auth0 page which can make the experience feel
+                unfamiliar.
             </p>
             <p class="point">
-                <b>- Poor Onboarding Experience</b>
-                <p hidden>
-                    Logins and Signups go through a pre-made Auth0 page which makes the experience
-                    feel unfamiliar
-                </p>
+                <b>No Formal Design for Administration Portal</b>
+                - Proper designs still need to be drafted for the administration section
             </p>
             <p class="point">
-                <b>- No Formal Design for Administration Portal</b>
-            </p>
-            <p class="point">
-                <b>- Unfinished Pages Around Application</b>
-            </p>
-            <p class="point">
-                <b>- No Tournament Functionality</b>
-            </p>
-            <SubHeader text="<!-- Back-end -->" />
-            <p class="point">
-                <b>- Disorganized</b>
-            </p>
-            <p class="point">
-                <b>- Validation Not Fully Implemented On All Endpoints</b>
-            </p>
-            <p class="point">
-                <b>- Documentation Lacks in Some Areas</b>
-            </p>
-            <p class="point">
-                <b>- No Tournament Functionality</b>
+                <b>Unfinished Pages Around Application</b>
+                - Some unfinished pages around application where the template is created, but it still
+                needs to be filled in with data and functionality
             </p>
         </div>
+    </div>
+    <div class="content-container">
+        <div class="content-full">
+            <SubHeader text="<!-- Back-end -->" />
+            <p class="point">
+                <b>Validation Not Fully Implemented On All Endpoints</b>
+                - Some endpoints don't have validation schemes and will accept data in any format
+            </p>
+            <p class="point">
+                <b>Documentation Lacks in Some Areas</b>
+                - API documentation lacks in some areas where new endpoints were created and modified
+                without updating Swagger
+            </p>
+        </div>
+        <p class="point">
+            <b>No Tournament Functionality</b>
+            - Not in back-end or front-end
+        </p>
     </div>
 </section>

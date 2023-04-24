@@ -11,18 +11,13 @@ import trophy from "/trophy.svg";
         <SubHeader text="-- Risks" />
         <div class="content-full">
             <p class="point">
-                <b>- Not Using an ORM</b>
-                <br /><span
-                    >&gt; ORM's can make retrieving data painless and easy to understand. I chose to
-                    write everything with raw SQL queries</span
-                >
+                <b>Not Using an ORM</b> - ORM's can make retrieving data painless and easy to understand.
+                I chose to write everything with raw SQL queries.
             </p>
             <p class="point">
-                <b>- Switching to PostgreSQL</b>
-                <br /><span
-                    >&gt; Early versions of the project utilized a MySQL database. This was switched
-                    to learn more of an enterprise database.</span
-                >
+                <b>Switching to PostgreSQL</b> - Early versions of the project utilized a MySQL database.
+                This was switched to learn more of an enterprise database. This wasn't a huge risk but
+                there are differences between MySQL and PostgreSQL that could cause issues.
             </p>
         </div>
     </div>
@@ -31,80 +26,76 @@ import trophy from "/trophy.svg";
         <SubHeader text="-- Challenges" />
         <div class="content-full">
             <p class="point">
-                <b>- Database Design</b><br />
-                <span>&gt; This data is very hierarchical with many parent-child relationships</span
-                >
-                <p hidden>
-                    When initially designing the database its very easy to draw the foreign keys
-                    from table to table. However, as I began to create the tables and query them I
-                    realized that this database will be much harder to design than initial thoughts.
-                    I looked at adjacency lists, nested sets, and bridge tables as alternatives, but
-                    these didn't work for my data. After meeting with my Professor we decided that a
-                    parent-child structure worked the best. Table joins have been relatively simple
-                    and as of now, there have been no glaring performance issues. This is of course
-                    with only a few rows per table. We will see how it performs when there are
-                    thousands of tables with multiple users querying.
-                </p>
+                <b>Database Design</b>
+                - This data is very hierarchical with many parent-child relationships
             </p>
             <p class="point">
-                <b>- Raw SQL queries</b><br />
-                <span>&gt; All queries are written with raw, executing simple CRUD commands</span>
-                <p hidden>
-                    When starting the project I didn't think there would be that many CRUD methods,
-                    so I went with writing them all. As the project grew and I began to realize the
-                    complexity of the data, writing queries became more difficult and took longer to
-                    understand multiple table joins. Future versions of the application might
-                    possibly switch to an ORM like Prisma for future queries, and eventually migrate
-                    the entire codebase
-                </p>
+                - When initially designing the database its very easy to draw the foreign keys from
+                table to table. However, as I began to create the tables and query them I realized
+                that this database will be much harder to design than initial thoughts. I looked at
+                adjacency lists, nested sets, and bridge tables as alternatives, but these didn't
+                work for my data. After meeting with my Professor we decided that a parent-child
+                structure worked the best. Table joins have been relatively simple and as of now,
+                there have been no glaring performance issues. This is of course with only a few
+                rows per table. We will see how it performs when there are thousands of tables with
+                multiple users querying.
+            </p>
+            <p class="point">
+                <b>Raw SQL queries</b>
+                - All queries are written with raw SQL, executing simple CRUD commands
+            </p>
+            <p class="point">
+                - When starting the project I didn't think there would be that many CRUD methods, so
+                I went with writing them all. As the project grew and I began to realize the
+                complexity of the data, writing queries became more difficult and took longer to
+                understand multiple table joins. Future versions of the application might possibly
+                switch to an ORM like Prisma for future queries, and eventually migrate the entire
+                codebase.
             </p>
 
             <p class="point">
-                <b>- MobX State Management</b><br /><span
-                    >&gt; MobX works like Redux to provide and control state around the application,
-                    making it easy to work with data</span
-                >
-                <p hidden>
-                    When first learning React everyone handles state in the same simple way.
-                    However, as the application grows it becomes difficult to manage loading states,
-                    error states, global state, fetching and sending data. I found myself needing
-                    state in places where I simply could not get it without requesting it from the
-                    server again, or prop drilling it down to the component that needed it. This is
-                    where other solutions like Redux would come into play to help better manage this
-                    state. But, I didn't feel like the learning curve justified the difficulties I
-                    was facing with my application state. MobX was recommended by my mentor and at
-                    first I was unsure of switching. As I switched portions of the application I
-                    realized that MobX was simple to use and allowed me to have global state. I have
-                    since then switched all portions of the application to use MobX. However, this
-                    isn't without its drawbacks. The MobX documentation and community is small so
-                    simple errors can take longer to debug and fix. I randomly have issues and it
-                    can be challenging to fix them.
-                </p>
+                <b>MobX State Management</b> - MobX works like Redux to provide and control state around
+                the application, making it easy to work with data
             </p>
             <p class="point">
-                <b>- API design</b><br />
-                <span>&gt; API design is split into three logical sections</span>
-                <p hidden>
-                    The Player section are endpoints that require no roles and are accessible by
-                    everyone. The Organization section is only accessible to administrators. Lastly,
-                    the Maintenance section is a separate logic flow that doesn't enforce
-                    "Organization Separation". It is only accessible by Sudo users.
-                </p>
+                - When first learning React everyone handles state in the same simple way. However,
+                as the application grows it becomes difficult to manage loading states, error
+                states, global state, fetching and sending data. I found myself needing state in
+                places where I simply could not get it without requesting it from the server again,
+                or prop drilling it down to the component that needed it. This is where other
+                solutions like Redux would come into play to help better manage this state. But, I
+                didn't feel like the learning curve justified the difficulties I was facing with my
+                application state. MobX was recommended by my mentor and at first I was unsure of
+                switching. As I switched portions of the application I realized that MobX was simple
+                to use and allowed me to have global state. I have since then switched all portions
+                of the application to use MobX. However, this isn't without its drawbacks. The MobX
+                documentation and community is small so simple errors can take longer to debug and
+                fix. I randomly have issues and it can be challenging to fix them.
             </p>
             <p class="point">
-                <b>- Understanding Reusability</b><br />
-                <span
-                    >&gt; I had to learn to write more items into reusable functions and components</span
-                >
-                <p></p>
+                <b>API design</b> - API design is split into three logical sections
             </p>
-            <div class="content-container"></div>
+            <p class="point">
+                - The Player section are endpoints that require no roles and are accessible by
+                everyone. The Organization section is only accessible to administrators. Lastly, the
+                Maintenance section is a separate logic flow that doesn't enforce "Organization
+                Separation". It is only accessible by Sudo users. The server didn't originally start
+                like this, I eventually created these logical separations as I realized lumping them
+                all together was confusing
+            </p>
+            <p class="point">
+                <b>Understanding Reusability</b> - I had to learn to write more items into reusable functions
+                and components
+            </p>
         </div>
-        <style>
-            .point span {
-                font-size: 25px;
-                margin-left: 20px;
-            }
-        </style>
     </div>
 </section>
+
+<div class="content-container"></div>
+
+<style>
+    .point span {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+</style>

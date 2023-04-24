@@ -1,6 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import logo from "/logo.svg";
+import html from "/html.svg";
+import javascript from "/javascript.svg";
+import astro from "/astro.svg";
+import css from "/css.svg";
 import Requirements from "../components/sections/Requirements.astro";
 import NewsTicker from "../components/NewsTicker.astro";
 import Technologies from "../components/sections/Technologies.astro";
@@ -8,24 +11,36 @@ import Introduction from "../components/sections/Introduction.astro";
 import Diagrams from "../components/sections/Diagrams.astro";
 import Challenges from "../components/sections/Challenges.astro";
 import Issues from "../components/sections/Issues.astro";
+import Common from "../layouts/Common.astro";
 ---
 
-
-<Layout title="Welcome to Intramu">
-    <main>
-        <img id="background-crest" src={logo} alt="Background Crest" />
-        <section class="section" id="landing">
+<Common>
+    <img id="background-crest" src={logo} alt="Background Crest" />
+    <section class="section" id="landing">
+        <div style="display: flex; flex-direction: column; text-align: center;">
             <img id="logo" src={logo} alt="Intramu Logo" />
-            <NewsTicker />
-        </section>
-        <Introduction />
-        <Requirements />
-        <Technologies />
-        <Diagrams />
-        <Challenges />
-        <Issues />
-    </main>
-</Layout>
+            <h1 style="padding-top: 50px;">Portfolio</h1>
+        </div>
+        <NewsTicker />
+    </section>
+    <Introduction />
+    <Requirements />
+    <Technologies />
+    <Diagrams />
+    <Challenges />
+    <Issues />
+    <section
+        style="display: flex; justify-content: center; flex-direction: column; text-align: center;"
+    >
+        <h3>Portfolio Built With:</h3>
+        <div style="display: flex; width: 100%; justify-content: center;">
+            <img class="icon" src={html} alt="HTML Logo" />
+            <img class="icon" src={javascript} alt="Javascript Logo" />
+            <img class="icon" src={css} alt="CSS Logo" />
+        </div>
+        <img class="icon" src={astro} alt="Astro Logo" />
+    </section>
+</Common>
 
 <script>
     let autoscrollToggle = false;
@@ -83,19 +98,22 @@ import Issues from "../components/sections/Issues.astro";
 </script>
 
 <style>
-    main {
-        color: white;
-        margin-top: 50px;
-        width: 1400px;
-        margin: auto;
-    }
     #landing {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         margin-top: 40px;
-        min-height: 100vh;
+        min-height: 1000px;
         margin-bottom: 0;
+    }
+    #background-crest {
+        height: 1600px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1.5%;
+        z-index: -5;
     }
     #logo {
         height: 350px;
@@ -108,6 +126,10 @@ import Issues from "../components/sections/Issues.astro";
         animation-timing-function: linear; */
         /* animation: spin 200ms infinite; */
         /* transform: rotateY(10deg); */
+    }
+    .icon {
+        height: 150px;
+        margin: 20px;
     }
     /* @keyframes spin {
         0% {
@@ -133,14 +155,5 @@ import Issues from "../components/sections/Issues.astro";
         100% {
             transform: scale(0.98);
         }
-    }
-    #background-crest {
-        height: 1600px;
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1.5%;
-        z-index: -5;
     }
 </style>

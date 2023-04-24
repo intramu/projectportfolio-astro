@@ -3,6 +3,11 @@ import SubHeader from "../headers/SubHeader.astro";
 import TopHeader from "../headers/TopHeader.astro";
 import computer from "/computer.svg";
 import nlayer from "/nLayerDiagram.drawio.svg";
+import react from "/react.svg";
+import astro from "/astro.svg";
+import mobx from "/mobx.svg";
+import postgres from "/postgres.svg";
+import nodejs from "/nodejs.svg";
 ---
 
 <section id="technologies">
@@ -11,14 +16,14 @@ import nlayer from "/nLayerDiagram.drawio.svg";
     <div class="content-container">
         <SubHeader text="` why these?" />
         <div class="content-full">
-            <p class="point">- Business cases will decide the technology stack</p>
+            <!-- <p class="point">- Business cases will decide the technology stack</p>
             <p class="point">- Intramu has the freedom to be built with any technology of choice</p>
-            <p class="point">- I chose to use modern frameworks with great communities</p>
-            <p class="point" hidden>
-                When building a new application one must carefully consider the business cases when
-                choosing the technology stack. Luckily, Intramu had the freedom to be built with any
-                technology of choice. Because of this, the developer chose to use new and up-to-date
-                technologies to keep the application modern.
+            <p class="point">- I chose to use modern frameworks with great communities</p> -->
+            <p class="point">
+                - When building a new application one must carefully consider the business cases
+                when choosing the technology stack. Luckily, Intramu had the freedom to be built
+                with any technology of choice. Because of this, the developer chose to use new and
+                up-to-date technologies to keep the application modern.
             </p>
         </div>
     </div>
@@ -26,24 +31,54 @@ import nlayer from "/nLayerDiagram.drawio.svg";
         <SubHeader text="` choices" />
         <div class="content-full">
             <p class="point">
-                - Intramu was built with React.js for the front-end with MobX managing its state
+                - Intramu was built with React.js for the front-end with MobX managing its state.
+                Vite manages the Javascript bundle and React Router controls the navigation around
+                the application. It is all styled with Emotion css.
             </p>
             <p class="point">
                 - The front-end communicates with a backed-end server running on Express.js &
-                Node.js
+                Node.js. It can handle thousands of simultaneous requests thanks to its event loop
+                that will continue serving requests while, waiting on lengthy IO operations like a
+                database. It logs requests and flow with Winston
             </p>
             <p class="point">
-                - The back-end server queries a PostgreSQL database modifying and adding new data
+                - The back-end server uses a third party library pg, to query a PostgreSQL database
+                modifying and adding new data. PostgreSQL is an enterprise level database that many
+                big tech companies use. Plus it can handle large amount of data easily
             </p>
-            <p class="point">- Lastly, it's all written in TypeScript for type safety</p>
+            <p class="point">
+                - Security is performed by Auth0 on both the back & front-end for a secure
+                experience
+            </p>
+            <p class="point">
+                - Lastly, the portfolio and landing pages are built using Astro for speed
+            </p>
+        </div>
+        <div class="content-full">
+            <ul class="content-list">
+                <li>Node.js v16.18 LTS</li>
+                <li>React.js v18.2</li>
+                <li>Vite v4.2.1</li>
+                <li>Mobx 6.4</li>
+                <li>React Router v6.4.2</li>
+                <li>Emotion/React v11.10.6</li>
+                <li>Express.js 5.0.0-beta.1</li>
+                <li>Winston v3.8.2</li>
+                <li>PostgreSQL v14.7</li>
+                <li>Pg v8.8</li>
+                <li>Auth0 v3.3 (Back-end)</li>
+                <li>Auth0-React v2.0.1 (Front-end)</li>
+                <li>Astro v2.3</li>
+                <li>Visual Studio Code v1.72</li>
+            </ul>
         </div>
 
         <div class="container-tech">
-            <img src="./reactLogo.png" alt="React Logo" />
-            <img src="./reactLogo.png" alt="React Logo" />
-            <img src="./reactLogo.png" alt="React Logo" />
-            <img src="./reactLogo.png" alt="React Logo" />
-            <img src="./reactLogo.png" alt="React Logo" />
+            <img src={react} alt="React Logo" />
+            <img src={postgres} alt="PostgreSQL Logo" />
+            <img src={mobx} alt="Mobx Logo" />
+            <img src={astro} alt="Astro Logo" />
+            <img src={nodejs} alt="Node.js Logo" />
         </div>
     </div>
     <div></div>
@@ -51,22 +86,12 @@ import nlayer from "/nLayerDiagram.drawio.svg";
     <div class="content-container">
         <SubHeader text="` new technologies" />
         <div class="content-full">
-            <p class="point">- Required the learning of lots of TypeScript</p>
             <p class="point">
-                - Previous experience with these technologies, but it was <b>weak</b>
-            </p>
-            <p class="point">- Never made a project of this level</p>
-            <p class="point">
-                - Learned to use MobX, a state management system and Emotion CSS, a styling
-                framework.
-            </p>
-            <p class="point" hidden>
-                Creating this project required the learning of a lot of JavaScript. I had previosuly
-                worked with React and Express at a basic level, but it was never anything this big.
-            </p>
-            <p class="point" hidden>
-                I had to mature in my skill level with these technologies.<br />
-                I also learned to use MobX, a state management system and Emotion CSS, a styling framework.
+                - Learning TypeScript was new for me as I previously enjoyed the loose type
+                checking. I had previous experience with React and Express, but never at a project
+                this scale, so it required the maturing of my skills. Mobx and Emotion CSS were new
+                and quick to pick up. Astro was completely new to me but it is pretty much just
+                standard html and css with some features sprinkled in.
             </p>
         </div>
     </div>
@@ -78,7 +103,7 @@ import nlayer from "/nLayerDiagram.drawio.svg";
                 style="display: flex; justify-content: center; flex-direction: column;"
                 class="content-full"
             >
-                <p class="point">
+                <!-- <p class="point">
                     <b>N-Layer</b> - Built with N-layer architecture to separate logical layers<br
                     />
                     <span>- Input validation is performed in the controller layer</span><br />
@@ -86,9 +111,6 @@ import nlayer from "/nLayerDiagram.drawio.svg";
                 </p>
                 <p class="point">
                     <b>Comments</b> - All code is commented with clear and concise comments<br />
-                    <span>
-                        - Assists myself and other developers in understanding segments of code</span
-                    >
                 </p>
                 <p class="point">
                     <b>Prettier</b> - Formats the entire codebase so it's consistent and easy to read.<br
@@ -102,31 +124,52 @@ import nlayer from "/nLayerDiagram.drawio.svg";
                     <b>Reusability -</b>Intramu code is organized into reusable modules and
                     components<br />
                     <span> - Prevents code duplication and promotes reusability of code.</span>
-                </p>
+                </p> -->
 
-                <!-- <p class="point">
-                    <b>N-Layer -</b>Intramu was built using N-layer architecture to separate the
-                    various logical layers into tiers. Input validation is performed in the
-                    controller layer where it's then passed to the business layer to perform logic.
+                <p class="point">
+                    <b>N-Layer</b> - Intramu was built using N-layer architecture to separate the various
+                    logical layers into tiers. Input validation is performed in the controller layer
+                    where it's then passed to the business layer to perform logic.
                 </p>
                 <p class="point">
-                    <b>Comments -</b>All code is commented with clear and concise comments to assist
+                    <b>Comments</b> - All code is commented with clear and concise comments to assist
                     myself and other developers in understanding segments of code.
                 </p>
                 <p class="point">
-                    <b>Prettier -</b>Formatting and indentation can pose a huge problem when
-                    multiple developers are coding. Each may prefer a certain format. Prettier
-                    formats the entire codebase so it's consistent and easy to read.
+                    <b>Prettier</b> - Formatting and indentation can pose a huge problem when multiple
+                    developers are coding. Each may prefer a certain format. Prettier formats the entire
+                    codebase so it's consistent and easy to read.
                 </p>
                 <p class="point">
-                    <b>Reusability -</b>Intramu code is organized into reusable modules and
-                    components and the front and back-end of the application. The prevents code
-                    duplication and promotes reusability of code.
-                </p> -->
+                    <b>Reusability</b> - Intramu code is organized into reusable modules and components
+                    and the front and back-end of the application. The prevents code duplication and
+                    promotes reusability of code.
+                </p>
             </div>
             <div style="text-align: center;">
                 <img src={nlayer} style="height: 800px;" alt="N-layer Architecture" />
             </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <SubHeader text="` cloud" />
+        <div class="content-full">
+            <p class="point">
+                - All of Intramu's services are currently deployed in the cloud. The portfolio and
+                landing page are both hosted on GitHub Pages. The back-end server runs on a AWS ec2
+                instance communicating with a local database on the instance. The front-end is
+                hosted on Vercel for simplicity. These all reside under the intramu.com domain.
+            </p>
+            <p class="point">
+                - Unfortunately, due to time, full DevOp priniciples were not applied. There is a
+                partial amount as all deployments, besides the back-end server will rebuild when a
+                new push is made to GitHub keeping content up to date. However, there are clusters
+                that will spin up new instances if any of these services go down. In the future, a
+                separate server would run for the database and a pipeline would be set up to rebuild
+                the back-end server when changes are made. The database, back-end server, and
+                front-end would all be run on clusters to support varying loads and spin up new
+                instances if a server went down.
+            </p>
         </div>
     </div>
 </section>

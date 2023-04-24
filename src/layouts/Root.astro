@@ -1,0 +1,41 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content="Project portfolio showcasing an introduction, technologies, and challenges that came with designing this project"
+        />
+        <title>Project Portfolio</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+<style is:global>
+    * {
+        padding: 0;
+        margin: 0;
+        /* font-family: arial, sans-serif; */
+        font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica,
+            Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+    }
+    html {
+        background-color: #1e1e1e;
+        min-height: 100%;
+    }
+    body {
+        overflow-x: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+</style>

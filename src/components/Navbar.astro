@@ -1,0 +1,73 @@
+---
+import profile from "/profile.svg";
+---
+
+<header>
+    <div class="local-container">
+        <div style="flex: 1; text-align: center;">
+            <button
+                id="autoscroll"
+                style="background-color: transparent; border: none; color: grey; cursor: pointer;"
+                >Autoscroll</button
+            >
+        </div>
+        <nav>
+            <a data-page="introduction">Introduction</a>
+            <a data-page="requirements">Requirements</a>
+            <a data-page="technologies">Technologies</a>
+            <a data-page="diagrams">Diagrams</a>
+            <a data-page="challenges">Challenges</a>
+            <a data-page="issues">Issues</a>
+        </nav>
+        <a style="flex: 1; text-align: center;" href={`${import.meta.env.BASE_URL}about`}>
+            <img src={profile} alt="Profile Icon" />
+        </a>
+    </div>
+</header>
+<script>
+    function scrollElement(tag: any) {
+        var dataAttribute = tag!.attributes.getNamedItem("data-page").value;
+        var element = document.getElementById(dataAttribute);
+        if (!element) {
+            window.location.assign(`${import.meta.env.BASE_URL}`);
+            return;
+        }
+        window.scrollTo({ top: element.offsetTop - 109, behavior: "smooth" });
+    }
+
+    var list = document.querySelectorAll("nav a");
+    list.forEach((element) => {
+        element.addEventListener("click", () => scrollElement(element));
+    });
+</script>
+<style>
+    header {
+        width: 100%;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 1000;
+        background-color: #1e1e1e;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+    }
+    .local-container {
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+        width: 100%;
+    }
+    nav {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: grey;
+        padding: 20px;
+        flex: 3;
+    }
+</style>

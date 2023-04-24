@@ -1,0 +1,77 @@
+---
+import Footer from "../components/Footer.astro";
+import Root from "./Root.astro";
+import Navbar from "../components/Navbar.astro";
+
+const { title } = Astro.props;
+---
+
+<Root>
+    <Navbar />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</Root>
+
+<style is:global>
+    main {
+        max-width: 1400px;
+        margin: auto;
+        width: 100%;
+        color: white;
+        flex: auto;
+    }
+
+    .content-container {
+        margin-left: 20px;
+        margin-bottom: 100px;
+    }
+    .point {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .inner-point {
+        font-size: 30px;
+    }
+    a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    section {
+        position: relative;
+        margin: 200px 0px;
+    }
+    .content-full {
+        border-left: 1px solid grey;
+        margin-bottom: 40px;
+        padding-left: 20px;
+        font-size: 25px;
+        width: 80%;
+    }
+    .container-two-column {
+        display: flex;
+        flex-direction: row;
+    }
+    .container-two-column > * {
+        flex: 1;
+    }
+    .content-list {
+        /* border-left: 1px solid grey; */
+        padding-left: 50px;
+        font-size: 20px;
+    }
+    .content-list > li {
+        margin: 10px 0px;
+        font-size: 25px;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    h2,
+    h1 {
+        font-size: 90px;
+        margin: 0;
+    }
+</style>
