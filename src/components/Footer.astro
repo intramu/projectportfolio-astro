@@ -4,15 +4,14 @@ import github from "/github.svg";
 
 <footer>
     <span style="flex: 2; text-align: right;">Check out Intramu -&gt;</span>
-    <a
-        style="flex: 1; text-align: center;"
-        href="https://github.com/intramu"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <img src={github} alt="Github Icon" />
-    </a>
-    <a id="top" style="flex: 2; text-align: left;">Back to Top ^</a>
+    <span style="flex: 1; text-align: center;">
+        <a href="https://github.com/intramu" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt="Github Icon" />
+        </a>
+    </span>
+    <span style="flex: 2; text-align: left;">
+        <a id="top">Back to Top ^</a>
+    </span>
 </footer>
 <script>
     const top = document.getElementById("top");

@@ -14,24 +14,61 @@ import highLevelWireframe from "/highLevelWireframe.png";
 
     <div class="content-container">
         <SubHeader class="subheader" text="# logical solution diagram" />
-        <img src={logical} id="logical" alt="Logical Solution Diagram" />
+        <a
+            href="https://github.com/intramu/docs/blob/main/LogicalSolutionDiagram.drawio.png"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={logical} id="logical" alt="Logical Solution Diagram" />
+        </a>
     </div>
 
     <div class="content-container">
         <SubHeader text="# physical solution diagram" />
-        <img src={physical} id="physical" alt="Physical Solution Diagram" />
+        <a
+            href="https://github.com/intramu/docs/blob/main/PhysicalSolutionDiagram.drawio.png"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={physical} id="physical" alt="Physical Solution Diagram" />
+        </a>
     </div>
     <div class="content-container">
         <SubHeader text="# er diagram" />
-        <img src={erDiagram} id="erDiagram" alt="ER Diagram" />
+        <a
+            href="https://github.com/intramu/docs/blob/main/ERDiagramActive.drawio.png"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={erDiagram} id="erDiagram" alt="ER Diagram" />
+        </a>
     </div>
     <div class="content-container">
         <SubHeader text="# low level wireframe" />
-        <img src={lowLevelWireframe} id="lowLevelWireframe" alt="Low Level Wireframe" />
+        <a
+            href="https://github.com/intramu/docs/blob/main/wireframes/low-level/Dashboard%401x.png"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={lowLevelWireframe} id="lowLevelWireframe" alt="Low Level Wireframe" />
+        </a>
     </div>
     <div class="content-container">
         <SubHeader text="# high level wireframe" />
-        <img src={highLevelWireframe} id="highLevelWireframe" alt="High Level Wireframe" />
+        <a
+            href="https://github.com/intramu/docs/blob/main/wireframes/high-level/DASHBOARD.png"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={highLevelWireframe} id="highLevelWireframe" alt="High Level Wireframe" />
+        </a>
+    </div>
+
+    <div class="content-container">
+        <SubHeader text="# check out more diagrams" />
+        <a href="https://github.com/intramu/docs" target="_blank" rel="noopener noreferrer">
+            <button>More on GitHub</button>
+        </a>
     </div>
 </section>
 
@@ -53,5 +90,18 @@ import highLevelWireframe from "/highLevelWireframe.png";
     }
     img {
         margin-bottom: 120px;
+    }
+    button {
+        background-color: inherit;
+        font-size: 18px;
+        cursor: pointer;
+        color: #386cd4;
+        border: 2px solid #386cd4;
+        border-radius: 3px;
+        padding: 20px;
+        transition: 200ms;
+    }
+    button:hover {
+        background-color: #386cd440;
     }
 </style>

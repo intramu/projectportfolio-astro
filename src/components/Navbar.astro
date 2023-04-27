@@ -19,9 +19,11 @@ import profile from "/profile.svg";
             <a data-page="challenges">Challenges</a>
             <a data-page="issues">Issues</a>
         </nav>
-        <a style="flex: 1; text-align: center;" href={`${import.meta.env.BASE_URL}about`}>
-            <img src={profile} alt="Profile Icon" />
-        </a>
+        <span style="flex: 1; text-align: center;">
+            <a href={`${import.meta.env.BASE_URL}about`}>
+                <img src={profile} alt="Profile Icon" />
+            </a>
+        </span>
     </div>
 </header>
 <script>
